@@ -5,91 +5,94 @@ import tester.*;
 
 /**
  * Examples for rbtree package
+ * 
  * @author Ariel Winton - winton.a@husky.neu.edu
- * @version 10-19-2013
+ * @version 11-14-2013
+ * @access public
  */
 public class ExamplesRBTree {
     /**
-     * list (iterable)
+     * ArrayList<String>
      */
     ArrayList<String> list;
     /**
-     * Comparator of Strings (lexicographical)
+     * Lexicographical Comparator<String>
      */
     StringByLex comp;
     /**
-     * Comparator of Strings (length)
+     * Length Comparator<String>
      */
     StringByLength comp1;
     /**
-     * Empty RBTree<String> with a StringByLex comparator
+     * Empty RBTree<String>
      */
     RBTree<String> empty;
     /**
-     * Non-empty RBTree<String> of size 1 with a StringByLex comparator
+     * Non-empty RBTree<String>
      */
     RBTree<String> cons;
     /**
-     * Non-empty RBTree<String> of size 2 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> cons1;
     /**
-     * Non-empty RBTree<String> of size 2 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> cons2;
     /**
-     * Non-empty RBTree<String> of size 1 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> cons3;
     /**
-     * Non-empty RBTree<String> of size 2 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> cons4;
     /**
-     * Non-empty RBTree<String> of size 2 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> consHelp;
     /**
-     * Non-empty RBTree<String> of size 2 with a StringByLex comparator
+     * Non-empty RBTree<String>
      */
     RBTree<String> cons5;
     /**
-     * Non-empty RBTree<String> of size 3 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> cons6;
     /**
-     * Non-empty RBTree<String> of size 3 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> cons7;
     /**
-     * Non-empty RBTree<String> of size 3 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> cons8;
     /**
-     * Non-empty RBTree<String> of size 3 with a StringByLex comparator
+     * Non-empty RBTree<String>
      */
     RBTree<String> cons9;
     /**
-     * Non-empty RBTree<String> of size 3 with a StringByLex comparator
+     * Non-empty RBTree<String> 
      */
     RBTree<String> cons10;
     /**
-     * Comparator of Integers (size)
+     * Size Comparator<Integer>
      */
     IntBySize compInt;
     /**
-     * Empty RBTree<Integer> with an IntBySize Comparator
+     * Empty RBTree<Integer> 
      */
     RBTree<Integer> emptyInt;
     /**
-     * Empty RBTree<Integer> of size 1 with an IntBySize Comparator
+     * Empty RBTree<Integer> 
      */
     RBTree<Integer> consInt;
     
     /**
-     * Set the variables above to values
+     * Initialize the variables above
+     * @access default
      */
-    public void setVars() {
+    void setVars() {
         list = new ArrayList<String>();
         list.add("Ariel");
         list.add("Hi");
@@ -117,10 +120,12 @@ public class ExamplesRBTree {
         consInt = emptyInt.insert(1);
     }
     /**
-     * Test the balance method in the Tree class
-     * @param t - test
+     * Test the balance method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testBalance(Tester t) {
+    void testBalance(Tester t) {
         setVars();
         t.checkExpect(empty.balance(), new Empty<String>(comp));
         t.checkExpect(cons.balance(), 
@@ -152,10 +157,12 @@ public class ExamplesRBTree {
                 cons10);
     }
     /**
-     * Test the maxBlack method in the Tree class
-     * @param t - test
+     * Test the maxBlack method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testMaxBlack(Tester t) {
+    void testMaxBlack(Tester t) {
         setVars();
         t.checkExpect(empty.maxBlack(), 1);
         t.checkExpect(cons.maxBlack(), 1);
@@ -164,10 +171,12 @@ public class ExamplesRBTree {
         t.checkExpect(consInt.maxBlack(), 1);
     }
     /**
-     * Test the minBlack method in the Tree class
-     * @param t - test
+     * Test the minBlack method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testMinBlack(Tester t) {
+    void testMinBlack(Tester t) {
         setVars();
         t.checkExpect(empty.minBlack(), 1);
         t.checkExpect(cons.minBlack(), 1);
@@ -176,10 +185,12 @@ public class ExamplesRBTree {
         t.checkExpect(consInt.minBlack(), 1);
     }
     /**
-     * Test the badReds method in the Tree class
-     * @param t - test
+     * Test the badReds method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testBadReds(Tester t) {
+    void testBadReds(Tester t) {
         setVars();
         t.checkExpect(empty.badReds(), 0);
         t.checkExpect(cons.badReds(), 0);
@@ -189,10 +200,12 @@ public class ExamplesRBTree {
                             .badReds(), 1);
     }
     /**
-     * Test the hasRedChild method in the Tree class
-     * @param t - test
+     * Test the hasRedChild method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testHasRedChild(Tester t) {
+    void testHasRedChild(Tester t) {
         setVars();
         t.checkExpect(empty.hasRedChild(), false);
         t.checkExpect(cons.hasRedChild(), false);
@@ -204,10 +217,12 @@ public class ExamplesRBTree {
                 .hasRedChild(), true);
     }
     /**
-     * Test the add method in the Tree class
-     * @param t - test
+     * Test the add method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testAdd(Tester t) {
+    void testAdd(Tester t) {
         setVars();
         t.checkExpect(empty.add("Ariel"), 
                 new Cons<String>(true, comp, "Ariel", empty, empty));
@@ -215,62 +230,75 @@ public class ExamplesRBTree {
                 new Cons<String>(true, comp, "Ariel", cons3, empty));
     }
     /**
-     * Test the makeBlack method in the Tree class
-     * @param t - test
+     * Test the makeBlack method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testMakeBlack(Tester t) {
+    void testMakeBlack(Tester t) {
         setVars();
         t.checkExpect(empty.makeBlack(), new Empty<String>(comp));
         t.checkExpect(cons.makeBlack(), 
                 new Cons<String>(false, comp, "Ariel", empty, empty));
     }
     /**
-     * Test the getComp method in the Tree class
-     * @param t - test
+     * Test the getComp method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testGetComp(Tester t) {
+    void testGetComp(Tester t) {
         setVars();
         t.checkExpect(empty.getComp(), comp);
         t.checkExpect(cons.getComp(), comp);
     }
     /**
-     * Test the getLeaf method in the Tree class
-     * @param t - test
+     * Test the getLeaf method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testGetLeaf(Tester t) {
+    void testGetLeaf(Tester t) {
         setVars();
         t.checkExpect(cons.getLeaf(), "Ariel");
     }
     /**
-     * Test the getLeft method in the Tree class
-     * @param t - test
+     * Test the getLeft method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testGetLeft(Tester t) {
+    void testGetLeft(Tester t) {
         setVars();
         t.checkExpect(cons.getLeft(), empty);
     }
     /**
-     * Test the getRight method in the Tree class
-     * @param t - test
+     * Test the getRight method in the RBTree<X> class
+     * @param t Tester
+     * @access default
      */
-    public void testGetRight(Tester t) {
+    void testGetRight(Tester t) {
         setVars();
         t.checkExpect(cons.getRight(), empty);
     }
     /**
-     * Test the getColor method in the Tree class
-     * @param t - test
+     * Test the getColor method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testGetColor(Tester t) {
+    void testGetColor(Tester t) {
         setVars();
         t.checkExpect(empty.getColor(), false);
         t.checkExpect(cons.getColor(), true);
     }
     /**
      * Test exceptions
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testExceptions(Tester t) {
+    void testExceptions(Tester t) {
         setVars();
         t.checkException(
                 "test the getLeaf method on an empty Tree",
@@ -286,10 +314,12 @@ public class ExamplesRBTree {
                 empty, "getRight");
     }
     /**
-     * Test the hashCode method for trees
-     * @param t - test
+     * Test the hashCode method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testHashCode2(Tester t) {
+    void testHashCode2(Tester t) {
         setVars();
         t.checkExpect(empty.hashCode(), 2);
         t.checkExpect(cons.hashCode(), "Ariel".hashCode() + 
@@ -297,10 +327,12 @@ public class ExamplesRBTree {
                 cons.getComp().hashCode());
     }
     /**
-     * Test the size method for Trees
-     * @param t - test
+     * Test the size method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testSize1(Tester t) {
+    void testSize1(Tester t) {
         setVars();
         t.checkExpect(empty.size(), 0);
         t.checkExpect(cons.size(), 1);
@@ -310,10 +342,12 @@ public class ExamplesRBTree {
         t.checkExpect(consInt.size(), 1);
     }
     /**
-     * Test the repOK method for Trees
-     * @param t - test
+     * Test the repOK method for RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testRepOK1(Tester t) {
+    void testRepOK1(Tester t) {
         setVars();
         t.checkExpect(empty.repOK(), true);
         t.checkExpect(new Empty<String>(null).repOK(), false);
@@ -338,10 +372,12 @@ public class ExamplesRBTree {
         t.checkExpect(consInt.repOK(), true);
     }
     /**
-     * Test the contains method for Trees
-     * @param t - test
+     * Test the contains method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testContains1(Tester t) {
+    void testContains1(Tester t) {
         setVars();
         t.checkExpect(empty.contains("Ariel"), false);
         t.checkExpect(cons.contains("Ariel"), true);
@@ -352,19 +388,23 @@ public class ExamplesRBTree {
         t.checkExpect(consInt.contains(1), true);
     }
     /**
-     * Test the toArray method for Trees
-     * @param t - test
+     * Test the toArray method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testToArray(Tester t) {
+    void testToArray(Tester t) {
         setVars();
         t.checkExpect(empty.toArray(list), list);
         t.checkExpect(cons.toArray(list), list);
     }
     /**
-     * Test the insert method for Trees
-     * @param t - test
+     * Test the insert method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testInsert(Tester t) {
+    void testInsert(Tester t) {
         setVars();
         t.checkExpect(empty.insert("Ariel"), cons);
         t.checkExpect(cons.insert("A"), cons4);
@@ -373,10 +413,12 @@ public class ExamplesRBTree {
         t.checkExpect(consInt.insert(1), consExample.makeBlack());
     }
     /**
-     * Test the toString method for Trees
-     * @param t - tests
+     * Test the toString method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testToString1(Tester t) {
+    void testToString1(Tester t) {
         setVars();
         t.checkExpect(empty.toString(), "");
         t.checkExpect(cons.toString(), "Ariel");
@@ -384,10 +426,12 @@ public class ExamplesRBTree {
         t.checkExpect(consInt.toString(), "1");
     }
     /**
-     * Tests the equals method for Trees
-     * @param t - test
+     * Tests the equals method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testEquals1(Tester t) {
+    void testEquals1(Tester t) {
         setVars();
         t.checkExpect(empty.equals(new Empty<String>(comp)), true);
         t.checkExpect(empty.insert("Ariel").equals(cons), true);
@@ -402,10 +446,12 @@ public class ExamplesRBTree {
         
     }
     /**
-     * Test the equalsMethod method for Trees
-     * @param t - test;
+     * Test the equalsMethod method in the RBTree<X> class
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testEqualsMethod(Tester t) {
+    void testEqualsMethod(Tester t) {
         setVars();
         t.checkExpect(empty.equalsMethod(empty), true);
         t.checkExpect(empty.equalsMethod(cons), false);
@@ -425,9 +471,11 @@ public class ExamplesRBTree {
     }
     /**
      * Test the compare method in the StringByLength class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testCompare(Tester t) {
+    void testCompare(Tester t) {
         setVars();
         t.checkExpect(comp1.compare("Ariel", "Fart"), 1);
         t.checkExpect(comp1.compare("Fart", "Ariel"), -1);
@@ -435,26 +483,32 @@ public class ExamplesRBTree {
     }
     /**
      * Test the equals method in the StringByLength class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testEquals2(Tester t) {
+    void testEquals2(Tester t) {
         setVars();
         t.checkExpect(comp1.equals(new StringByLength()), true);
         t.checkExpect(comp1.equals(comp), false);
     }
     /**
      * Test the hashCode method in the StringByLength class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testHashCode3(Tester t) {
+    void testHashCode3(Tester t) {
         setVars();
         t.checkExpect(comp1.hashCode(), 0);
     }
     /**
      * Test the compare method in the StringByLex class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testCompare1(Tester t) {
+    void testCompare1(Tester t) {
         setVars();
         t.checkExpect(comp.compare("Ariel", "A"), 4);
         t.checkExpect(comp.compare("A", "Ariel"), -4);
@@ -462,43 +516,52 @@ public class ExamplesRBTree {
     }
     /**
      * Test the equals method in the StringByLex class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testEquals3(Tester t) {
+    void testEquals3(Tester t) {
         setVars();
         t.checkExpect(comp.equals(new StringByLex()), true);
         t.checkExpect(comp.equals(comp1), false);
     }
     /**
      * Test the hashCode method in the StringByLex class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testHashCode4(Tester t) {
+    void testHashCode4(Tester t) {
         setVars();
         t.checkExpect(comp.hashCode(), 1);
     }
     /**
      * Test the repOK method in the StringByLex class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testRepOK3(Tester t) {
+    void testRepOK3(Tester t) {
         setVars();
         t.checkExpect(comp.repOK(), true);
     }
-
     /**
      * Test the repOK method in the StringByLength class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testRepOK2(Tester t) {
+    void testRepOK2(Tester t) {
         setVars();
         t.checkExpect(comp1.repOK(), true);
     }
     /**
      * Test the methods in the IntBySize class
-     * @param t - test
+     * 
+     * @param t Tester
+     * @access default
      */
-    public void testIntBySize(Tester t) {
+    void testIntBySize(Tester t) {
         setVars();
         t.checkExpect(compInt.compare(0, 1), -1);
         t.checkExpect(compInt.compare(0, 0), 0);
